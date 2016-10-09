@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	base(href= baseUrl)
+	meta(charset="UTF-8")
+	title Binary Studio Intranet
+	link(href="./styles/style.css" rel="stylesheet")
+	link(href="./styles/libs.css" rel="stylesheet")
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+body
+	.navbar.navbar-default.container(role='navigation' ng-controller="AuthLoginController as authLoginCtrl")
+		.container-fluid
+			.navbar-header
+				button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-menubuilder')
+					span.sr-only Toggle navigation
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				.collapse.navbar-collapse.navbar-menubuilder
+					ul.nav.navbar-nav
+						li
+							a(href='#/users') Home
+						li(ng-if="authLoginCtrl.loggedIn")
+							a(href='#/users') Users
+						li(ng-if="authLoginCtrl.loggedIn")
+							a(href='#/roles') Roles
+						li.dropdown
+							a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+								| Services
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='/profile') Profile
+								li
+									a(href='/newsletter') Newsletter
+								li
+									a(href='/notification') Notification
+						li(ng-if="authLoginCtrl.loggedIn")
+							a(href='./logout') Logout
+	block content
+	script(src="./javascripts/libs.js")
+	script(src="./javascripts/main.js")
+	script.
+		angular.bootstrap(document, ['intranet-mediator']);

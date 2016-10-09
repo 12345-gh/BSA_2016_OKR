@@ -1,0 +1,15 @@
+extends ./layout
+
+block content
+	div(id="messages")
+		if messages.error.length
+			div(class="alert alert-danger text-center container", role="alert")
+				span(class="glyphicon glyphicon-exclamation-sign", aria-hidden="true")
+				span  #{ messages.error }
+
+		if messages.info.length
+			div(class="alert alert-success text-center container", role="alert")
+				span(class="glyphicon glyphicon-info-sign", aria-hidden="true")
+				span  #{ messages.info }
+
+	#main(ng-view)

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+	base(href= baseUrl)
+	meta(charset="UTF-8")
+	title Binary Studio Intranet
+	link(href="./styles/style.css" rel="stylesheet")
+	link(href="./styles/libs.css" rel="stylesheet")
+body
+	block content
+	script(src="./javascripts/libs.js")
+	script(src="./javascripts/main.js")
+	script.
+		angular.bootstrap(document, ['intranet-mediator']);

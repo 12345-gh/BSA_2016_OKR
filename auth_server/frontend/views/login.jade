@@ -1,0 +1,14 @@
+extends ./layout
+ 
+block content
+  div.container
+    div.row
+      div.col-sm-6.col-md-4.col-md-offset-4
+        .text-center
+          div.account-wall
+            img(class='profile-img', src='images/anonymous.png')
+            form(class='form-signin', action='api/login', method='POST')
+              input(type='text', name='username' class='form-control', placeholder='Email',required, autofocus)
+              input(type='password', name='password' class='form-control', placeholder='Password', required)
+              button(class='btn btn-lg btn-primary btn-block', type='submit') Login in
+              span.clearfix

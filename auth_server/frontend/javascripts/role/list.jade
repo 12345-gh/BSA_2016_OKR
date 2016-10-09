@@ -1,0 +1,18 @@
+.container
+  table.table.table-striped
+        thead: tr
+          th ID
+          th Role
+        tbody
+          tr(ng-repeat="role in roleListCtrl.roles")
+             td {{role._id}}
+             td {{role.role}}
+             td 
+              button(class="btn btn-primary" ng-click="roleListCtrl.detailRole({id:role._id})")
+                span(class="glyphicon glyphicon-edit")
+              button(class="btn btn-danger" ng-click="roleListCtrl.deleteRole(role)")
+                span(class="glyphicon glyphicon-remove-sign")
+          tr
+            td(colspan="4") 
+              button(class="btn btn-success" ng-click="roleListCtrl.newRole()")
+                span(class="glyphicon glyphicon-plus-sign")

@@ -1,0 +1,7 @@
+.container
+		form.form-horizontal.detail-form
+			fieldset
+				.form-group
+					input(type="text", placeholder="Role", class="form-control", ng-model="roleDetailCtrl.role.role")
+				.form-group
+					button(class="btn btn-primary" ng-click="roleDetailCtrl.updateRole()") Save

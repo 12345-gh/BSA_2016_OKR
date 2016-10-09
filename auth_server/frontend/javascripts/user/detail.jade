@@ -1,0 +1,17 @@
+.container
+		form.form-horizontal.detail-form(autocomplete="on")
+			fieldset
+				.form-group
+					input(type="text", placeholder="Email", class="form-control", ng-model="userDetailCtrl.user.email")
+				.form-group
+					select(ng-model="userDetailCtrl.user.role", class="form-control")
+						option(selected, value="") - Choose role -
+						option(ng-repeat="role in userDetailCtrl.roles", value="{{ role.role }}") {{ role.role }}
+				.control-group(ng-if="!userDetailCtrl.user._id")
+					.form-group
+						input(type="password", placeholder="Password", class="form-control", ng-model="userDetailCtrl.user.password")
+					.form-group				
+						input(type="password", placeholder="Confirm password", class="form-control", ng-model="userDetailCtrl.confirm_password")
+						.message-error(ng-show="userDetailCtrl.confirm_password" ng-if="userDetailCtrl.user.password!=userDetailCtrl.confirm_password" class="alert alert-danger") Passwords do not match
+				.form-group
+					button(class="btn btn-primary" ng-click="userDetailCtrl.updateUser()") Save

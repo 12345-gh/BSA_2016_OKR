@@ -1,0 +1,19 @@
+.container
+  table.table.table-striped
+        thead: tr
+          th ID
+          th Email
+          th Action
+        tbody
+          tr(ng-repeat="user in userListCtrl.users")
+             td {{user._id}}             
+             td {{user.email}}
+             td 
+              button(class="btn btn-primary" ng-click="userListCtrl.detailUser({id:user._id})")
+                span(class="glyphicon glyphicon-edit")
+              button(class="btn btn-danger" ng-click="userListCtrl.deleteUser(user)")
+                span(class="glyphicon glyphicon-remove-sign")
+          tr
+            td(colspan="3") 
+              button(class="btn btn-success" ng-click="userListCtrl.newUser()")
+                span(class="glyphicon glyphicon-plus-sign")
